@@ -105,15 +105,13 @@ const PartnersSection = () => {
               transition={{ repeat: Infinity, ease: "linear", duration: 45 }}
             >
               {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, index) => {
-                const originalIndex = index % PARTNER_LOGOS.length;
-
                 // LOGIC UPDATE:
                 // Indices that need to be BIG (h-40):
                 // 1: KSUM
                 // 2: IIIC
                 // 3: Triple I (Requested Bigger)
                 // 4: Ecodrisil (Requested Bigger)
-                const isLargeLogo = [1, 2, 3, 8].includes(originalIndex);
+                // const isLargeLogo = [1, 2, 3, 8].includes(originalIndex);
 
                 // Note: KMA (Index 0) falls into the 'else' block now, making it smaller/standard.
 
@@ -125,10 +123,7 @@ const PartnersSection = () => {
                     <img
                       src={logo}
                       alt={`Partner ${index + 1}`}
-                      // Apply size based on group
-                      className={`w-full object-contain hover:scale-110 transition-transform duration-300 ${
-                        isLargeLogo ? "h-35" : "h-18"
-                      }`}
+                      className="w-full object-contain hover:scale-110 transition-transform duration-300 h-18"
                     />
                   </div>
                 );
