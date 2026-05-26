@@ -11,14 +11,17 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 // import required modules for auto-scroll and fade effect
 import { Autoplay, EffectFade } from "swiper/modules";
+import { useData } from "../components/context/DashboardContext";
 
 const EventDetails = () => {
-  const { slug } = useParams();
-  const event = EVENTS_DATA.find((e) => e.slug === slug);
+  const { _id } = useParams();
+  const { events } = useData();
+  const event = events.find((e) => e._id === _id);
+  console.log(_id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [slug]);
+  }, [_id]);
 
   if (!event) {
     return (
@@ -44,16 +47,15 @@ const EventDetails = () => {
       ? imageArray[0]
       : "https://via.placeholder.com/1200x600?text=No+Image";
 
-
-      // --- NEW LOGIC: Dynamic Image Position ---
+  // --- NEW LOGIC: Dynamic Image Position ---
   const alignClass = event.imgPos || "object-top";
-const fitClass = event.isLogo ? "object-contain bg-white p-8" : "object-cover";
+  const fitClass = event.isLogo
+    ? "object-contain bg-white p-8"
+    : "object-cover";
   return (
-   <div className="font-sans bg-white min-h-screen pb-20">
-      
+    <div className="font-sans bg-white min-h-screen pb-20">
       {/* 1. Immersive Hero Section */}
       <div className="relative w-full h-[50vh] md:h-[85vh] bg-gray-900">
-        
         {/* --- 3. CONDITIONAL RENDERING --- */}
         {hasMultipleImages ? (
           <Swiper
@@ -118,7 +120,7 @@ const fitClass = event.isLogo ? "object-contain bg-white p-8" : "object-cover";
               </div>
               <div className="bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 border border-white/20">
                 <MapPin className="w-4 h-4" />
-                {event.location}
+                {event.place}
               </div>
             </div>
 
@@ -129,7 +131,7 @@ const fitClass = event.isLogo ? "object-contain bg-white p-8" : "object-cover";
         </div>
       </div>
 
-{/* 2. Article Content */}
+      {/* 2. Article Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -141,7 +143,7 @@ const fitClass = event.isLogo ? "object-contain bg-white p-8" : "object-cover";
               No need to split or map. It just works.
           */}
           <div className="whitespace-pre-line text-lg leading-8 text-gray-700">
-            {event.description}
+            {event.longDescription}
           </div>
         </motion.div>
 

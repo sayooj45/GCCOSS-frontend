@@ -33,7 +33,7 @@ function App() {
             <Route path="/services" element={<ServicePortfolio />} />
             <Route path="/events" element={<Events />} />
             {/* 2. ADD THIS NEW LINE: */}
-            <Route path="/events/:slug" element={<EventDetails />} />
+            <Route path="/events/:_id" element={<EventDetails />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/publications" element={<Publications />} />
             {/* <Route path="join-us" element={<JoinUs />} /> */}

@@ -10,6 +10,8 @@ import {
   AlertCircle,
 } from "lucide-react";
 
+import { useData } from "../components/context/DashboardContext";
+
 const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState("idle"); // 'idle', 'sending', 'success', 'error'
@@ -83,9 +85,44 @@ const Contact = () => {
       (error) => {
         console.log(error.text);
         setStatus("error"); // Show backup message
-      },
+      }
     );
   };
+
+  // const sendEmail = async (e) => {
+  //   e.preventDefault();
+
+  //   if (!validateForm()) {
+  //     return;
+  //   }
+
+  //   try {
+  //     setStatus("sending");
+
+  //     const formData = new FormData(form.current);
+
+  //     const data = {
+  //       name: formData.get("user_name"),
+  //       mobile: formData.get("mobile_number"),
+  //       email: formData.get("user_email"),
+  //       message: formData.get("message"),
+  //     };
+
+  //     const res = await axios.post(`${API_URL}/api/submit`, data);
+
+  //     console.log(res.data);
+
+  //     setStatus("success");
+
+  //     setErrors({});
+
+  //     form.current.reset();
+  //   } catch (error) {
+  //     console.log(error.response?.data || error);
+
+  //     setStatus("error");
+  //   }
+  // };
 
   return (
     <div
@@ -252,7 +289,11 @@ const Contact = () => {
                     type="text"
                     name="user_name"
                     className={`w-full px-4 py-3 rounded-xl bg-gray-50 border focus:ring-4 outline-none transition-all 
-                      ${errors.user_name ? "border-red-500 focus:border-red-500 focus:ring-red-100" : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"}`}
+                      ${
+                        errors.user_name
+                          ? "border-red-500 focus:border-red-500 focus:ring-red-100"
+                          : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"
+                      }`}
                   />
                   {errors.user_name && (
                     <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
@@ -270,7 +311,11 @@ const Contact = () => {
                     type="tel"
                     name="mobile_number"
                     className={`w-full px-4 py-3 rounded-xl bg-gray-50 border focus:ring-4 outline-none transition-all 
-                      ${errors.mobile_number ? "border-red-500 focus:border-red-500 focus:ring-red-100" : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"}`}
+                      ${
+                        errors.mobile_number
+                          ? "border-red-500 focus:border-red-500 focus:ring-red-100"
+                          : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"
+                      }`}
                   />
                   {errors.mobile_number && (
                     <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
@@ -289,7 +334,11 @@ const Contact = () => {
                   type="email"
                   name="user_email"
                   className={`w-full px-4 py-3 rounded-xl bg-gray-50 border focus:ring-4 outline-none transition-all 
-                    ${errors.user_email ? "border-red-500 focus:border-red-500 focus:ring-red-100" : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"}`}
+                    ${
+                      errors.user_email
+                        ? "border-red-500 focus:border-red-500 focus:ring-red-100"
+                        : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"
+                    }`}
                 />
                 {errors.user_email && (
                   <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
@@ -307,7 +356,11 @@ const Contact = () => {
                   name="message"
                   rows="4"
                   className={`w-full px-4 py-3 rounded-xl bg-gray-50 border focus:ring-4 outline-none transition-all resize-none 
-                    ${errors.message ? "border-red-500 focus:border-red-500 focus:ring-red-100" : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"}`}
+                    ${
+                      errors.message
+                        ? "border-red-500 focus:border-red-500 focus:ring-red-100"
+                        : "border-gray-200 focus:border-teal-500 focus:ring-teal-500/10"
+                    }`}
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-500 text-xs mt-1 flex items-center gap-1">

@@ -14,6 +14,7 @@ import greenfi from "../../assets/images/partnersLogo/greenfi.jpeg";
 import equinoctLogo from "../../assets/images/partnersLogo/EQUINOCT.png";
 import cetaaLogo from "../../assets/images/partnersLogo/College of Engineering Trivandrum Alumni Association (CETAA).jpeg";
 import Nexergy from "../../assets/images/partnersLogo/Nexergy.png";
+import { useData } from "../context/DashboardContext";
 
 // Placeholder
 
@@ -123,6 +124,8 @@ const cardVariants = {
 };
 
 const PartnersGrid = () => {
+  const { partners } = useData();
+
   return (
     <section className="bg-gray-50 py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1440px] mx-auto">
@@ -133,9 +136,9 @@ const PartnersGrid = () => {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {PARTNERS_DATA.map((partner) => (
+          {partners.map((partner) => (
             <motion.div
-              key={partner.id}
+              key={partner._id}
               variants={cardVariants}
               whileHover={{ y: -8 }}
               className="group relative bg-white rounded-2xl p-8 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] transition-all duration-500 flex flex-col h-full border border-gray-100 overflow-hidden"
@@ -151,14 +154,14 @@ const PartnersGrid = () => {
                 */}
                 <img
                   src={partner.logo}
-                  alt={partner.name}
+                  alt={partner.title}
                   className={`h-full w-auto object-contain transition-transform duration-500 drop-shadow-sm group-hover:drop-shadow-md  scale-100 group-hover:scale-110`}
                 />
               </div>
 
               {/* Name */}
               <h3 className="text-xl font-bold text-gray-900 mb-4 min-h-[56px] flex items-center leading-tight group-hover:text-teal-600 transition-colors duration-300">
-                {partner.name}
+                {partner.title}
               </h3>
 
               {/* Description */}
