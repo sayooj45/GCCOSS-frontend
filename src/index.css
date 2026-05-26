@@ -1,0 +1,17 @@
+/* 1. Import Inter from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+
+/* 2. Set it as the global default */
+@theme {
+  --font-sans: "Inter", "sans-serif";
+}
+
+/* 3. Apply base styles */
+:root {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
