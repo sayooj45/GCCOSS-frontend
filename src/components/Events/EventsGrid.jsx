@@ -61,7 +61,11 @@ const EventsGrid = () => {
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm flex items-center gap-2">
                     <Calendar className="w-3 h-3 text-teal-600" />
                     <span className="text-xs font-bold text-gray-800 uppercase tracking-wide">
-                      {event.date}
+                      {new Date(event.date).toLocaleDateString("en-GB", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
                     </span>
                   </div>
                 </div>
