@@ -40,7 +40,7 @@ import ScForAcademicians from "../assets/images/events/Sc-for-Academicians.jpeg"
 import NorkaImage from "../assets/images/home/HomeScroll6.jpeg";
 
 export const EVENTS_DATA = [
-    {
+  {
     id: 11,
     slug: "kma-green-palms",
     title: "KMA Green Palms 2.0",
@@ -70,7 +70,7 @@ to apply and showcase initiatives that contribute to lasting economic, social, a
 environmental value.`,
   },
   {
-    id: 12, // Make sure this ID is unique
+    id: 12,
     slug: "sustainable-certification-academicians",
     title: "Sustainable Certification for Academicians",
     date: "January 31, 2026",
@@ -91,7 +91,7 @@ operations, and institutional governance, thereby equipping academicians
 with practical frameworks to drive sustainability transformation within higher 
 education institutions.`,
   },
-    {
+  {
     id: 10,
     slug: "kma-digital",
     title: "KMA Digital",
@@ -112,7 +112,7 @@ workspaces and predictive analytics, fostering cross-sector collaboration across
 health tech, and edtech. Supported by strategic partners Fortinet and South Indian Bank, 
 the summit reflected the growing convergence of technology, finance, and cybersecurity.`,
   },
-    {
+  {
     id: 6,
     slug: "recode-kerala-2025",
     title: "ReCode Kerala 2025",
@@ -130,7 +130,7 @@ Joseph Martin Chazoor Francis, CEO of GCCOSS highlighted Kerala’s potential in
 
 The seminar served as a collaborative platform to reimagine Kerala’s development pathways and reinforce its commitment to sustainable and technology-driven transformation.`,
   },
-    {
+  {
     id: 13,
     slug: "sustainable-construction-white-paper",
     title: "White Paper on Sustainable Construction in Kerala",
@@ -151,7 +151,7 @@ diverse stakeholders. The White Paper presents an action-oriented strategic
 pathway for Kerala to transition towards a low-carbon, climate-resilient, and 
 inclusive built environment and infrastructure ecosystem.`,
   },
-    {
+  {
     id: 8,
     slug: "cetaa-susthithi",
     title: "CETAA Susthithi 2.0",
@@ -177,7 +177,7 @@ strong performance on the Sustainable Development Goals, Susthithi 2.0 positions
 state as a living lab for testing replicable models and aims to foster partnerships that 
 advance cleaner communities, efficient resource use, and inclusive livelihoods.`,
   },
-    {
+  {
     id: 7,
     slug: "norka-business-leadership",
     title: "NORKA Business Leadership",
@@ -200,7 +200,7 @@ focused strategic platform complementing the broader Loka Kerala Sabha, this fir
 its-kind initiative seeks to institutionalize long-term partnerships with the Malayali 
 diaspora, fostering innovation and sustainable development across key sectors.`,
   },
-    {
+  {
     id: 5,
     slug: "sustainability-summit-ksum",
     title: "Sustainability Summit 2025",
@@ -221,7 +221,7 @@ Discussions were centred around three key themes:
 
 The event served as a platform for collaboration and idea exchange, reaffirming Kerala’s commitment to innovation-driven sustainability.`,
   },
-    {
+  {
     id: 4,
     slug: "ficci-msme-event",
     title: "FICCI MSME Event",
@@ -241,7 +241,7 @@ The conversation explored practical pathways for MSMEs to integrate ESG principl
 
 The panel also highlighted emerging opportunities in the low-carbon energy transition and digital healthcare innovation, encouraging MSMEs to strategically invest, enhance capacity, and innovate in alignment with sustainability trends. Overall, the event reinforced that embracing ESG is not just about compliance but a strategic move toward sustainable growth and business transformation.`,
   },
-    {
+  {
     id: 3,
     slug: "kma-sustainability-awards",
     title: "KMA Sustainability Awards 2025",
@@ -258,7 +258,7 @@ The event also underscored Kerala’s strengths—high HDI, strong SDG performan
 
 The KMA Green Palms Awards serve as a platform to recognize and inspire organizations contributing to long-term sustainable value creation for Kerala and the nation.`,
   },
-    {
+  {
     id: 2,
     slug: "atmos-workshop",
     title: "Atmos",
@@ -294,8 +294,6 @@ The workshop concluded with an interactive Q&A, fostering collaboration and shar
 The event featured insightful addresses from the dignitaries, marking a significant milestone in the establishment of GCCOSS and its vision to advance sustainability initiatives.`,
   },
 
-
-
   // {
   //   id: 9,
   //   slug: "cetaa-startup-competition",
@@ -308,7 +306,4 @@ The event featured insightful addresses from the dignitaries, marking a signific
   //     "Highlighting sustainable startups and green technologies aimed at solving modern challenges.",
   //   description: `Encouraging innovation among students and alumni, this competition highlights sustainable startups and green technologies aimed at solving modern challenges.`,
   // },
-
-
-
 ];

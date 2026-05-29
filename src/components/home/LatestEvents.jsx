@@ -3,17 +3,26 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // 1. IMPORT REAL DATA
-import { EVENTS_DATA } from "../../data/eventsData";
-// import { useData } from '../context/DashboardContext';
+// import { EVENTS_DATA } from "../../data/eventsData";
+import { useData } from "../context/DashboardContext";
 
 const LatestEvents = () => {
-  // const {events}= useData()
-  // 1. Define the IDs you want to show
-  const selectedIds = [2, 13, 12];
+  const { events } = useData();
+  console.log("events", events);
 
-  // 2. Filter the real data to get only these events
-  const latestThreeEvents = selectedIds
-    .map((id) => EVENTS_DATA.find((event) => event.id === id))
+  const selectedTitles = [
+    "Atmos",
+    "White Paper on Sustainable Construction in Kerala",
+    "Sustainable Certification for Academicians",
+  ];
+
+  const latestThreeEvents = selectedTitles
+    .map((title) =>
+      events.find(
+        (event) =>
+          event.title?.trim().toLowerCase() === title.trim().toLowerCase()
+      )
+    )
     .filter(Boolean);
 
   return (
@@ -47,7 +56,7 @@ const LatestEvents = () => {
 
             return (
               <motion.div
-                key={event.id}
+                key={event._id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -76,7 +85,7 @@ const LatestEvents = () => {
                   <div className="mt-auto">
                     {/* 4. DYNAMIC LINKING */}
                     <Link
-                      to={`/events/${event.slug}`}
+                      to={`/events/${event._id}`}
                       className="inline-flex items-center text-black font-bold text-sm hover:text-teal-600 transition-colors"
                     >
                       Read More
